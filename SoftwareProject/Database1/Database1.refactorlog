@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="4aa98321-9fc7-4193-8220-24e42b503db8" ChangeDateTime="11/16/2018 05:27:52">
+    <Property Name="ElementName" Value="[dbo].[Table1].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Table1]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="UserName" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="e15ca124-263f-4254-97c2-9cdfd64241b5" ChangeDateTime="11/16/2018 05:38:37">
+    <Property Name="ElementName" Value="[dbo].[Table1].[UserName]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Table1]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="User" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="59551fc5-ecf2-4c66-863b-be85f8e0c955" ChangeDateTime="11/16/2018 05:38:42">
+    <Property Name="ElementName" Value="[dbo].[Table1].[User]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Table1]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="dsafas" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="3d4c0ac6-2da4-4690-b678-27967fad70d0" ChangeDateTime="11/16/2018 05:38:52">
+    <Property Name="ElementName" Value="[dbo].[Table1].[dsafas]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Table1]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="userName" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="a0c7ae15-7334-42f6-af97-97b30e453c04" ChangeDateTime="11/16/2018 05:39:14">
+    <Property Name="ElementName" Value="[dbo].[Table1]" />
+    <Property Name="ElementType" Value="SqlTable" />
+    <Property Name="ParentElementName" Value="[dbo]" />
+    <Property Name="ParentElementType" Value="SqlSchema" />
+    <Property Name="NewName" Value="tblUser" />
+  </Operation>
+</Operations>

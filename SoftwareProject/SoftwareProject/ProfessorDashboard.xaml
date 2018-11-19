@@ -7,6 +7,16 @@
         mc:Ignorable="d"
         Title="ProfessorDashboard" Height="450" Width="800">
     <Grid>
-        
+        <DataGrid AutoGenerateColumns="True" x:Name="ProfessorDashboard1"  Margin="357,0,0,82"  ></DataGrid>
+        <Button x:Name="Load_table" Content="Load Table" HorizontalAlignment="Left" Margin="357,360,0,0" VerticalAlignment="Top" Width="75" Click="Load_table_Click"/>
+        <Button x:Name="InsertButton" Content="Add Student" HorizontalAlignment="Left" Margin="42,240,0,0" VerticalAlignment="Top" Width="75" Click="InsertButton_Click"/>
+        <Button x:Name="RemoveButton" Content="Remove" HorizontalAlignment="Left" Margin="141,240,0,0" VerticalAlignment="Top" Width="75" Click="RemoveButton_Click"/>
+        <Button x:Name="UpdateButton" Content="Update" HorizontalAlignment="Left" Margin="249,240,0,0" VerticalAlignment="Top" Width="75" Click="UpdateButton_Click"/>
+        <TextBlock HorizontalAlignment="Left" Margin="101,114,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="Name"/><LineBreak/><Run/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="101,146,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.775,1.401" Width="91" Height="20"><Run Text="Last Name"/><LineBreak/><Run/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="101,80,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.775,1.401" Width="91" Height="20"><Run Text="ID"/><LineBreak/><Run/></TextBlock>
+        <TextBox x:Name="LastNameTextBox" HorizontalAlignment="Left" Height="23" Margin="161,146,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="NameTextBox" HorizontalAlignment="Left" Height="23" Margin="161,113,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="IDTextBox" HorizontalAlignment="Left" Height="23" Margin="161,79,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
     </Grid>
 </Window>
