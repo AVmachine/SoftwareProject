@@ -46,9 +46,13 @@ namespace SoftwareProject
                     if (count == 1)
                     {
 
-                        StudentDashboard studentDashboard= new StudentDashboard();
-                        studentDashboard.Show();
+                        MessageBox.Show("Welcome");
+                        StudentDashboard student1 = new StudentDashboard();
+                        student1.Show();
                         this.Close();
+                       // ProfessorDashboard prof1 = new ProfessorDashboard();
+                       // prof1.Show();
+                       // this.Close();
                     }
                     else
                     {

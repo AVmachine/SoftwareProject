@@ -7,7 +7,16 @@
         mc:Ignorable="d"
         Title="Student Dashboard" Height="450" Width="800">
     <Grid>
-        
-        
+
+        <DataGrid AutoGenerateColumns="True" x:Name="StudentDashboardGrid1"  Margin="44,52,392,178"  ></DataGrid>
+        <Button x:Name="DisplayButton" Content="Display" HorizontalAlignment="Left" Margin="193,286,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.016,-0.384" Click="DisplayButton_Click"/>
+        <Label Content="EXAMS" HorizontalAlignment="Left" Margin="193,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.429,-0.378"/>
+        <DataGrid AutoGenerateColumns="True" x:Name="StudentDashboardGrid2"  Margin="422,52,32,178"  />
+        <Button x:Name="CalculateButton" Content="Calculcate" HorizontalAlignment="Left" Margin="621,288,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.178,-1.197" Click="CalculateButton_Click"/>
+        <ComboBox HorizontalAlignment="Left" Margin="474,286,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBox_SelectionChanged"/>
+
     </Grid>
+
+
+
 </Window>

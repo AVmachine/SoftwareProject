@@ -98,7 +98,7 @@ namespace SoftwareProject
 
                     SqlCommand sqlCmd = sqlCon.CreateCommand();
                     string query = "Delete FROM StudentTable WHERE StudentID = ('" + IDTextBox.Text + "')";
-                    sqlCmd.CommandType = CommandType.Text;
+                    //sqlCmd.CommandType = CommandType.Text;
                     sqlCmd.CommandText = query;
                     sqlCmd.ExecuteNonQuery();
                     sqlCon.Close();
@@ -121,7 +121,7 @@ namespace SoftwareProject
                 {
                     sqlCon.Open();
                     SqlCommand sqlCmd = sqlCon.CreateCommand();
-                    string query = "UPDATE StudentTable SET StudentID = '" + IDTextBox.Text + "' ,sStudentName ='" + this.NameTextBox.Text + "', StudentLastname ='" + this.LastNameTextBox.Text+
+                    string query = "UPDATE StudentTable SET StudentID = '" + IDTextBox.Text + "' ,StudentName ='" + this.NameTextBox.Text + "', StudentLastname ='" + this.LastNameTextBox.Text+
                     "' where StudentID = '" + IDTextBox.Text+ "'";
                     sqlCmd.CommandType = CommandType.Text;
                     sqlCmd.CommandText = query;
