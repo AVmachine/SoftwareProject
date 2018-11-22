@@ -83,6 +83,13 @@ namespace SoftwareProject
         {
 
         }
+        
+        private void LogoutButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            LoginWindow logout = new LoginWindow();
+            logout.Show();
+        }
 
         void Fillcombo()
         {
