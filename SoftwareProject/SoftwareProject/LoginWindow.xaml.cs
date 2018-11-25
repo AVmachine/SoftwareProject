@@ -24,13 +24,14 @@ namespace SoftwareProject
     {
         private const string ConnectionString = @"Data Source=LTEA\SQLEXPRESS ; Initial Catalog=LoginDb; Integrated Security=True";
         private const string queryString = "SELECT COUNT(1) FROM UserTable WHERE Username=@Username AND Password=@Password";
+        private const string queryAdmin = "SELECT COUNT(1) FROM AdminTable WHERE Username=@Username AND Password=@Password";
 
         public LoginWindow()
         {
             //Data Source=LTEA\SQLEXPRESS;Initial Catalog=LoginDB;Integrated Security=True;Pooling=False
             InitializeComponent();
         }
-        private void btnSubmit_Click(object sender, RoutedEventArgs e)
+        private void btnStudent_Click (object sender, RoutedEventArgs e)
         {
             SqlConnection sqlCon = new SqlConnection(ConnectionString);
             try
@@ -46,7 +47,7 @@ namespace SoftwareProject
                     if (count == 1)
                     {
 
-                        MessageBox.Show("Welcome");
+                        MessageBox.Show("Welcome to your Student Account");
                         StudentDashboard student1 = new StudentDashboard();
                         student1.Show();
                         this.Close();
@@ -56,9 +57,8 @@ namespace SoftwareProject
                     }
                     else
                     {
-                        MessageBox.Show("Name or Password is incorrect");
-                        ProfessorDashboard prof1 = new ProfessorDashboard();
-                        prof1.Show();
+                        MessageBox.Show("Username and/or Password is Incorrect");
+                       
                     }
                 }
             }
@@ -72,9 +72,45 @@ namespace SoftwareProject
             }
         }
 
-        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void btnAdmin_Click (object sender, RoutedEventArgs e)
         {
+            SqlConnection sqlCon = new SqlConnection(ConnectionString);
+            try
+            {
+                if (sqlCon.State == System.Data.ConnectionState.Closed)
+                {
+                    sqlCon.Open();
+                    string query = queryAdmin;
+                    SqlCommand sqlCmd = new SqlCommand(query, sqlCon);
+                    sqlCmd.Parameters.AddWithValue("@Username", txtUserName.Text);
+                    sqlCmd.Parameters.AddWithValue("@Password", txtPassword.Password);
+                    int count = Convert.ToInt32(sqlCmd.ExecuteScalar());
+                    if (count == 1)
+                    {
 
+                        MessageBox.Show("Welcome to your Admin Account");
+                        ProfessorDashboard prof1 = new ProfessorDashboard();
+                        prof1.Show();
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Username and/or Password is Incorrect");
+                        // ProfessorDashboard prof1 = new ProfessorDashboard();
+                        // prof1.Show();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                sqlCon.Close();
+            }
         }
+
+     
     }
 }

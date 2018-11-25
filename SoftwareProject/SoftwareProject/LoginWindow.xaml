@@ -14,12 +14,8 @@
             <TextBox Name="txtUserName" Width="300" HorizontalAlignment="Center"/>
             <Label Content="Password" Foreground="White" Margin="30 0  "/>
             <PasswordBox Name="txtPassword" Width="300" HorizontalAlignment="Center"/>
-            <ComboBox Margin="70 10" Name="AccountType" HorizontalAlignment="Center" VerticalAlignment="Top" Width="125" Height="22">
-                <ComboBoxItem Content="Student"></ComboBoxItem>
-                <ComboBoxItem Content="Admin"></ComboBoxItem>
-            </ComboBox>
-            <Button x:Name="btnSubmit" Click="btnSubmit_Click"  Foreground="White" Content="Submit" Width="100" Margin="70 3" Height="22" HorizontalAlignment="Center" />
-            
+            <Button x:Name="btnStudent" Click="btnStudent_Click"  Foreground="Black" Content="Student Login" Width="100" Margin="70 5" Height="22" HorizontalAlignment="Center" />
+            <Button x:Name="btnAdmin" Click="btnAdmin_Click"  Foreground="Black" Content="Admin Login" Width="100" Margin="70 0" Height="22" HorizontalAlignment="Center" />
 
         </StackPanel>
     </Border>
