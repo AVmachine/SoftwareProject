@@ -28,6 +28,7 @@ namespace SoftwareProject
         {
 
             InitializeComponent();
+            Fillcombo();
 
         }
 
@@ -86,19 +87,18 @@ namespace SoftwareProject
 
         void Fillcombo()
         {
-            using (sqlCon)
-            {
+           
                 SqlCommand sqlCmd = new SqlCommand("SELECT DISTINCT Courses FROM Students WHERE student = Alex", sqlCon);
                 sqlCon.Open();
                 SqlDataReader sqlReader = sqlCmd.ExecuteReader();
 
                 while (sqlReader.Read())
                 {
-                    CoursesCombo.Items.Add(sqlReader["name"].ToString());
+                    CoursesCombo.Items.Add(sqlReader["Courses"].ToString());
                 }
 
                 sqlReader.Close();
-            }
+     
         }
 
         private void LogoutButton_Click(object sender, RoutedEventArgs e)
