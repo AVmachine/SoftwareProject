@@ -36,7 +36,7 @@ namespace SoftwareProject
         {
             sqlCon.Open();
             SqlCommand sqlCmd = sqlCon.CreateCommand();
-            string query = "SELECT Courses.CourseName, Exams.Score FROM Exams INNER JOIN Courses ON   Courses.StudentID = Exams.StudentID AND Exams.StudentID = 1 AND Exams.CourseID = 1 Order by Courses.CourseName DESC; ";
+            string query = "SELECT Exams FROM Students WHERE Student = 'Alex' AND Courses = 'Math";
             sqlCmd.CommandType = CommandType.Text;
             sqlCmd.CommandText = query;
             sqlCmd.ExecuteNonQuery();
@@ -88,7 +88,7 @@ namespace SoftwareProject
         void Fillcombo()
         {
            
-                SqlCommand sqlCmd = new SqlCommand("SELECT DISTINCT Courses FROM Students WHERE student = Alex", sqlCon);
+                SqlCommand sqlCmd = new SqlCommand("SELECT DISTINCT Courses FROM Students WHERE Student = 'Alex'", sqlCon);
                 sqlCon.Open();
                 SqlDataReader sqlReader = sqlCmd.ExecuteReader();
 
@@ -98,7 +98,8 @@ namespace SoftwareProject
                 }
 
                 sqlReader.Close();
-     
+            sqlCon.Close();
+
         }
 
         private void LogoutButton_Click(object sender, RoutedEventArgs e)
