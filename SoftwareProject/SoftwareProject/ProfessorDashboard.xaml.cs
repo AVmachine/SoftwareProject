@@ -139,5 +139,12 @@ namespace SoftwareProject
                 display_data();
             }
         }
+
+        private void LogoutButton_Click (object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            LoginWindow logout = new LoginWindow();
+            logout.Show();
+        }
     }
     }
