@@ -22,12 +22,12 @@ namespace SoftwareProject
     /// </summary>
     public partial class LoginWindow : Window
     {
-        private const string ConnectionString = @"Data Source=DESKTOP-D6AP9T9 ; Initial Catalog=LoginDb; Integrated Security=True";
+        private const string ConnectionString = @"Data Source=LTEA\SQLEXPRESS ; Initial Catalog=LoginDb; Integrated Security=True";
         private const string queryString = "SELECT COUNT(1) FROM UserTable WHERE Username=@Username AND Password=@Password";
 
         public LoginWindow()
         {
-            //Data Source=DESKTOP-D6AP9T9;Initial Catalog=LoginDB;Integrated Security=True;Pooling=False
+            //Data Source=LTEA\SQLEXPRESS;Initial Catalog=LoginDB;Integrated Security=True;Pooling=False
             InitializeComponent();
         }
         private void btnSubmit_Click(object sender, RoutedEventArgs e)
@@ -70,6 +70,11 @@ namespace SoftwareProject
             {
                 sqlCon.Close();
             }
+        }
+
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

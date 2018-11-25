@@ -10,11 +10,17 @@
         <StackPanel Margin="20">
             <Label Content="Login" Foreground="white" FontSize="25" HorizontalAlignment="center"/>
             <Separator></Separator>
-            <Label Content="Username" Foreground="White"/>
-            <TextBox Name="txtUserName" Width="300" HorizontalAlignment="Left"/>
-            <Label Content="Password" Foreground="White"/>
-            <PasswordBox Name="txtPassword" Width="300" HorizontalAlignment="Left"/>
-            <Button x:Name="btnSubmit" Click="btnSubmit_Click"  Foreground="White" Content="Submit" Width="100" Margin="60 10" Height="20" HorizontalAlignment="Center" />
+            <Label Content="Username" Foreground="White" Margin="30 0"/>
+            <TextBox Name="txtUserName" Width="300" HorizontalAlignment="Center"/>
+            <Label Content="Password" Foreground="White" Margin="30 0  "/>
+            <PasswordBox Name="txtPassword" Width="300" HorizontalAlignment="Center"/>
+            <ComboBox Margin="70 10" Name="AccountType" HorizontalAlignment="Center" VerticalAlignment="Top" Width="125" Height="22">
+                <ComboBoxItem Content="Student"></ComboBoxItem>
+                <ComboBoxItem Content="Admin"></ComboBoxItem>
+            </ComboBox>
+            <Button x:Name="btnSubmit" Click="btnSubmit_Click"  Foreground="White" Content="Submit" Width="100" Margin="70 3" Height="22" HorizontalAlignment="Center" />
+            
+
         </StackPanel>
     </Border>
 </Window>

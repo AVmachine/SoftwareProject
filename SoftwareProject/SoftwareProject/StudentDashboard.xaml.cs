@@ -21,7 +21,7 @@ namespace SoftwareProject
     /// </summary>
     public partial class StudentDashboard : Window
     {
-        private const string ConnectionString = @"Data Source=DESKTOP-D6AP9T9 ; Initial Catalog=LoginDb; Integrated Security=True";
+        private const string ConnectionString = @"Data Source=LTEA\SQLEXPRESS ; Initial Catalog=LoginDb; Integrated Security=True";
         SqlConnection sqlCon = new SqlConnection(ConnectionString);
 
         public StudentDashboard()
@@ -86,7 +86,7 @@ namespace SoftwareProject
         
         private void LogoutButton_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            this.Hide();
             LoginWindow logout = new LoginWindow();
             logout.Show();
         }
