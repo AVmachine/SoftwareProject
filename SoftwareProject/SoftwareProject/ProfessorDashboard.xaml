@@ -18,6 +18,5 @@
         <TextBox x:Name="LastNameTextBox" HorizontalAlignment="Left" Height="23" Margin="161,146,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="NameTextBox" HorizontalAlignment="Left" Height="23" Margin="161,113,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="IDTextBox" HorizontalAlignment="Left" Height="23" Margin="161,79,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="LogoutButton" Click="LogoutButton_Click" Content="Logout" HorizontalAlignment="Left" Margin="695,360,0,0" VerticalAlignment="Top" Width="75"/>
     </Grid>
 </Window>
