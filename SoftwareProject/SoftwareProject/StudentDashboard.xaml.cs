@@ -21,7 +21,7 @@ namespace SoftwareProject
     /// </summary>
     public partial class StudentDashboard : Window
     {
-        private const string ConnectionString = @"Data Source=ALEXANTHONYA945\SQLEXPRESS; Initial Catalog=LoginDb; Integrated Security=True";
+        private const string ConnectionString = @"Data Source=LTEA\SQLEXPRESS ; Initial Catalog=LoginDb; Integrated Security=True";
         SqlConnection sqlCon = new SqlConnection(ConnectionString);
 
         public StudentDashboard()
@@ -87,6 +87,13 @@ namespace SoftwareProject
         void Fillcombo()
         {
 
+        }
+
+        private void LogoutButton_Click(object sender, RoutedEventArgs e)
+        {
+                this.Hide();
+                LoginWindow logout = new LoginWindow();
+                logout.Show();
         }
     }
    

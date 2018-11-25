@@ -51,9 +51,7 @@ namespace SoftwareProject
                         StudentDashboard student1 = new StudentDashboard();
                         student1.Show();
                         this.Close();
-                       // ProfessorDashboard prof1 = new ProfessorDashboard();
-                       // prof1.Show();
-                       // this.Close();
+                     
                     }
                     else
                     {
@@ -96,8 +94,7 @@ namespace SoftwareProject
                     else
                     {
                         MessageBox.Show("Username and/or Password is Incorrect");
-                        // ProfessorDashboard prof1 = new ProfessorDashboard();
-                        // prof1.Show();
+                      
                     }
                 }
             }

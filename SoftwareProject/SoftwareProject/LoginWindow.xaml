@@ -8,12 +8,13 @@
         Title="Login" Height="450" Width="450" Background='LightGray' FontSize='14'>
     <Border Background="Gray" Margin="20" CornerRadius="20">
         <StackPanel Margin="20">
-            <Label Content="Login" Foreground="white" FontSize="25" HorizontalAlignment="center"/>
+            <Label Content="Learning Management System" Foreground="white" FontSize="25" HorizontalAlignment="center"/>
             <Separator></Separator>
             <Label Content="Username" Foreground="White" Margin="30 0"/>
             <TextBox Name="txtUserName" Width="300" HorizontalAlignment="Center"/>
             <Label Content="Password" Foreground="White" Margin="30 0  "/>
             <PasswordBox Name="txtPassword" Width="300" HorizontalAlignment="Center"/>
+            <Label Content="Select Account Login Type:" Foreground="White" HorizontalAlignment="Center"/>
             <Button x:Name="btnStudent" Click="btnStudent_Click"  Foreground="Black" Content="Student Login" Width="100" Margin="70 5" Height="22" HorizontalAlignment="Center" />
             <Button x:Name="btnAdmin" Click="btnAdmin_Click"  Foreground="Black" Content="Admin Login" Width="100" Margin="70 0" Height="22" HorizontalAlignment="Center" />
 
