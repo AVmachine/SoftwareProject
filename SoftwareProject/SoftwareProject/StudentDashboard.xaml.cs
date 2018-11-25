@@ -86,7 +86,7 @@ namespace SoftwareProject
         
         private void LogoutButton_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            this.Hide();
             LoginWindow logout = new LoginWindow();
             logout.Show();
         }
