@@ -36,7 +36,7 @@ namespace SoftwareProject
         {
             sqlCon.Open();
             SqlCommand sqlCmd = sqlCon.CreateCommand();
-            string query = "SELECT Exams FROM Students WHERE Student = 'Alex' AND Courses = 'Math";
+            string query = "SELECT Exams,Grades FROM Students WHERE Student = 'Alex' AND Courses = 'Math'";
             sqlCmd.CommandType = CommandType.Text;
             sqlCmd.CommandText = query;
             sqlCmd.ExecuteNonQuery();

@@ -21,7 +21,7 @@ namespace SoftwareProject
     /// </summary>
     public partial class ProfessorDashboard : Window
     {
-        private const string ConnectionString = @"Data Source=ALEXANTHONYA945/SQLEXPRESS ; Initial Catalog=LoginDb; Integrated Security=True";
+        private const string ConnectionString = @"Data Source=LTEA\SQLEXPRESS ; Initial Catalog=LoginDb; Integrated Security=True";
         SqlConnection sqlCon = new SqlConnection(ConnectionString);
         public ProfessorDashboard()
         {
