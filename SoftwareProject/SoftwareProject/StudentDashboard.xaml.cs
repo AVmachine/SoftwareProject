@@ -55,7 +55,7 @@ namespace SoftwareProject
         {
             sqlCon.Open();
             SqlCommand sqlCmd = sqlCon.CreateCommand();
-            string query = "SELECT AVG(Exams.Score)  AS Final_Grade FROM EXAMS, Courses WHERE Exams.StudentID = 1 AND Courses.StudentID = Exams.StudentID AND Courses.StudentID = 1 AND Exams.CourseID = 2";
+            string query = "SELECT AVG(Grades) FROM Students WHERE Courses = 'Math'";
             sqlCmd.CommandType = CommandType.Text;
             sqlCmd.CommandText = query;
             sqlCmd.ExecuteNonQuery();
