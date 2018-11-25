@@ -55,7 +55,7 @@ namespace SoftwareProject
         {
             sqlCon.Open();
             SqlCommand sqlCmd = sqlCon.CreateCommand();
-            string query = "SELECT AVG(Grades) FROM Students WHERE Courses = 'Math'";
+            string query = "SELECT AVG(Grades) AS GPA FROM Students WHERE Courses = 'Math'";
             sqlCmd.CommandType = CommandType.Text;
             sqlCmd.CommandText = query;
             sqlCmd.ExecuteNonQuery();
