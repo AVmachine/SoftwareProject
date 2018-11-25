@@ -21,7 +21,7 @@ namespace SoftwareProject
     /// </summary>
     public partial class StudentDashboard : Window
     {
-        private const string ConnectionString = @"Data Source=DESKTOP-D6AP9T9 ; Initial Catalog=LoginDb; Integrated Security=True";
+        private const string ConnectionString = @"Data Source=ALEXANTHONYA945\SQLEXPRESS; Initial Catalog=LoginDb; Integrated Security=True";
         SqlConnection sqlCon = new SqlConnection(ConnectionString);
 
         public StudentDashboard()
@@ -54,7 +54,7 @@ namespace SoftwareProject
         {
             sqlCon.Open();
             SqlCommand sqlCmd = sqlCon.CreateCommand();
-            string query = "SELECT AVG(Exams.Score)  AS Final_Grade FROM EXAMS, Courses WHERE Exams.StudentID = 1 AND Courses.StudentID = Exams.StudentID AND Courses.StudentID = 1 AND Exams.CourseID = 3";
+            string query = "SELECT AVG(Exams.Score)  AS Final_Grade FROM EXAMS, Courses WHERE Exams.StudentID = 1 AND Courses.StudentID = Exams.StudentID AND Courses.StudentID = 1 AND Exams.CourseID = 2";
             sqlCmd.CommandType = CommandType.Text;
             sqlCmd.CommandText = query;
             sqlCmd.ExecuteNonQuery();
@@ -81,7 +81,7 @@ namespace SoftwareProject
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+        
         }
 
         void Fillcombo()

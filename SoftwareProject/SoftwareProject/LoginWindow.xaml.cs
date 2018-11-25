@@ -22,7 +22,7 @@ namespace SoftwareProject
     /// </summary>
     public partial class LoginWindow : Window
     {
-        private const string ConnectionString = @"Data Source=DESKTOP-D6AP9T9 ; Initial Catalog=LoginDb; Integrated Security=True";
+        private const string ConnectionString = @"Data Source=ALEXANTHONYA945\SQLEXPRESS; Initial Catalog=LoginDB; Integrated Security=True";
         private const string queryString = "SELECT COUNT(1) FROM UserTable WHERE Username=@Username AND Password=@Password";
 
         public LoginWindow()
