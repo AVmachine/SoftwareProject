@@ -108,6 +108,14 @@ namespace SoftwareProject
                 LoginWindow logout = new LoginWindow();
                 logout.Show();
         }
+
+        private void btnAddCourses_Click(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            Stu_AddCourses addcourses = new Stu_AddCourses();
+            addcourses.Show();
+           
+        }
     }
    
 }

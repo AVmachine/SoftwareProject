@@ -17,13 +17,13 @@ using System.Data;
 namespace SoftwareProject
 {
     /// <summary>
-    /// Interaction logic for ProfessorDashboard.xaml
+    /// Interaction logic for AddCourses.xaml
     /// </summary>
-    public partial class ProfessorDashboard : Window
+    public partial class Stu_AddCourses : Window
     {
         private const string ConnectionString = @"Data Source=LTEA\SQLEXPRESS ; Initial Catalog=LoginDb; Integrated Security=True";
         SqlConnection sqlCon = new SqlConnection(ConnectionString);
-        public ProfessorDashboard()
+        public Stu_AddCourses()
         {
             InitializeComponent();
         }
@@ -43,6 +43,14 @@ namespace SoftwareProject
             }
         }
 
+
+        private void LogoutButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            LoginWindow logout = new LoginWindow();
+            logout.Show();
+        }
+
         private void InsertButton_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -52,14 +60,14 @@ namespace SoftwareProject
                     sqlCon.Open();
 
                     SqlCommand sqlCmd = sqlCon.CreateCommand();
-                    string query = "insert into StudentTable values('"+IDTextBox.Text+"','"+NameTextBox.Text+ "','"+ LastNameTextBox.Text+ "')";
+                    string query = "insert into StudentCourses values('" + IDTextBox.Text + "','" + CourseIDTextBox.Text + "')";
                     sqlCmd.CommandType = CommandType.Text;
                     sqlCmd.CommandText = query;
                     sqlCmd.ExecuteNonQuery();
                     sqlCon.Close();
                     display_data();
 
-                    MessageBox.Show("Student Inserted Succesfully");
+                    MessageBox.Show("Courses Added Succesfully");
                 }
             }
             catch (Exception exception)
@@ -68,26 +76,6 @@ namespace SoftwareProject
             }
         }
 
-        public void display_data()
-        {
-            sqlCon.Open();
-            SqlCommand sqlCmd = sqlCon.CreateCommand();
-            string query = "select * from StudentTable";
-            sqlCmd.CommandType = CommandType.Text;
-            sqlCmd.CommandText = query;
-            sqlCmd.ExecuteNonQuery();
-
-
-            DataTable dt = new DataTable("StudentTable");
-            SqlDataAdapter dataADP = new SqlDataAdapter(sqlCmd);
-            dataADP.Fill(dt);
-            ProfessorDashboard1.ItemsSource = dt.DefaultView;
-            dataADP.Update(dt);
-            sqlCon.Close();
-
-        }
-
-        // Remove Button
         private void RemoveButton_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -97,14 +85,14 @@ namespace SoftwareProject
                     sqlCon.Open();
 
                     SqlCommand sqlCmd = sqlCon.CreateCommand();
-                    string query = "Delete FROM StudentTable WHERE StudentID = ('" + IDTextBox.Text + "')";
+                    string query = "Delete FROM StudentCourses WHERE CourseID = ('" + CourseIDTextBox.Text + "')";
                     //sqlCmd.CommandType = CommandType.Text;
                     sqlCmd.CommandText = query;
                     sqlCmd.ExecuteNonQuery();
                     sqlCon.Close();
                     display_data();
 
-                    MessageBox.Show("Student Removed Succesfully");
+                    MessageBox.Show("Course Removed Succesfully");
                 }
             }
             catch (Exception exception)
@@ -121,8 +109,8 @@ namespace SoftwareProject
                 {
                     sqlCon.Open();
                     SqlCommand sqlCmd = sqlCon.CreateCommand();
-                    string query = "UPDATE StudentTable SET StudentID = '" + IDTextBox.Text + "' ,StudentName ='" + this.NameTextBox.Text + "', StudentLastname ='" + this.LastNameTextBox.Text+
-                    "' where StudentID = '" + IDTextBox.Text+ "'";
+                    string query = "UPDATE StudentCourses SET StudentID = '" + IDTextBox.Text + "', CourseID ='" + this.CourseIDTextBox.Text + "', CourseName ='" +
+                    "' where CourseID = '" + CourseIDTextBox.Text + "'";
                     sqlCmd.CommandType = CommandType.Text;
                     sqlCmd.CommandText = query;
                     sqlCmd.ExecuteNonQuery();
@@ -140,11 +128,31 @@ namespace SoftwareProject
             }
         }
 
-        private void LogoutButton_Click(object sender, RoutedEventArgs e)
+
+        public void display_data()
         {
-                this.Hide();
-                LoginWindow logout = new LoginWindow();
-                logout.Show();
+            sqlCon.Open();
+            SqlCommand sqlCmd = sqlCon.CreateCommand();
+            string query = "select * from StudentCourses";
+            sqlCmd.CommandType = CommandType.Text;
+            sqlCmd.CommandText = query;
+            sqlCmd.ExecuteNonQuery();
+
+            
+            DataTable dt = new DataTable("StudentCourses");
+            SqlDataAdapter dataADP = new SqlDataAdapter(sqlCmd);
+            dataADP.Fill(dt);
+            Stu_AddCourses1.ItemsSource = dt.DefaultView;
+            dataADP.Update(dt);
+            sqlCon.Close();
+
+        }
+
+        private void Stu_AddCourses_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
-    }
+
+
+}

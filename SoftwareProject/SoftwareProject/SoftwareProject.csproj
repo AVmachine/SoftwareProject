@@ -67,6 +67,9 @@
     <Compile Include="StudentDashboard.xaml.cs">
       <DependentUpon>StudentDashboard.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Stu_AddCourses.xaml.cs">
+      <DependentUpon>Stu_AddCourses.xaml</DependentUpon>
+    </Compile>
     <Page Include="LoginWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -83,6 +86,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="StudentDashboard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Stu_AddCourses.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
